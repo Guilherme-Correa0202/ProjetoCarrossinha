@@ -2,7 +2,7 @@
     include('Includes/conexao.php');
     $id = $_POST['id'];
     $nome = $_POST['nome'];
-    $especie = $_POST['email'];
+    $email = $_POST['email'];
     $endereco = $_POST['endereco'];
     $bairro = $_POST['bairro'];
     $cep = $_POST['cep'];
