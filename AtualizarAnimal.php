@@ -16,11 +16,22 @@
 
 </head>
 <body>
-<form action="AtualizarAnimalExe.php" method="post">
+<form action="AtualizarAnimalExe.php" method="post" enctype="multipart/form-data">
         <fieldset>
         <div>
                 <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" value=" <?php echo $row['nomeAnimal'] ?>">
+                <input type="text" name="nome" id="nome" value=" <?php echo $row['nomeAnimal'] ?>" accept="image/*">
+            </div>
+            <div>
+                <label for="foto">Alterar Foto</label>
+                <?php
+                if($row['foto'] != ""){
+                    echo "<img src ='". $row['foto']."' width ='80px' height ='80px'><br>";
+                
+                }
+                ?>
+                
+                <input type="file" name="foto" id="foto">
             </div>
             <div>
                 <label for="especie">Especie:</label>

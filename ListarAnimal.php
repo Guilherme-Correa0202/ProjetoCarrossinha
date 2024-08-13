@@ -12,7 +12,7 @@
 <body>
     <?php
         include('Includes/conexao.php');
-        $sql = "SELECT an.idAnimal, an.nomeAnimal, an.especie,  an.raca ,  an.dataNascimento,  an.idade,  an.castrado, 
+        $sql = "SELECT an.idAnimal, an.nomeAnimal, foto, an.especie,  an.raca ,  an.dataNascimento,  an.idade,  an.castrado, 
         tu.nomePessoa, tu.email 
         FROM Animal an 
         LEFT JOIN Pessoa tu on  tu.idPessoa = an.idTutor";
@@ -23,6 +23,7 @@
         <tr>
             <Th>Codigo</Th>
             <th>Nome</th>
+            <th>Foto</th>
             <th>Especie</th>
             <th>Raça</th>
             <th>Data Nascimento</th>
@@ -38,6 +39,12 @@
                 echo"<tr>";
                 echo"<td>".$row['idAnimal']."</td>";
                 echo"<td>".$row['nomeAnimal']."</td>";
+                if($row['foto']==""){
+                    echo "<td>Vazio</td>";
+                }
+                else{
+                    echo"<td><img src ='".$row['foto']."' width ='80px' height ='80px' ></td>";
+                }
                 echo"<td>".$row['especie']."</td>";
                 echo"<td>".$row['raca']."</td>";
                 echo"<td>".$row['dataNascimento']."</td>";

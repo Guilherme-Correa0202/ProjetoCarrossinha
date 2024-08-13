@@ -1,9 +1,6 @@
 <?php
     include("Includes/conexao.php");
-    $id = $_GET["id"];
-    $sql = "SELECT * FROM Cidade WHERE idCidade=$id";
-    $result = mysqli_query($con,$sql);
-    $row = mysqli_fetch_array($result);
+    $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +15,6 @@
 <body>
 <?php
         include('Includes/conexao.php');
-        $id = $_GET['id'];
         $sql = "DELETE FROM Cidade WHERE idCidade = $id";
         $result = mysqli_query($con, $sql);
         if($result){

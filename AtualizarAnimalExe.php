@@ -8,7 +8,14 @@
     $idade = $_POST['idade'];
     $castrado = $_POST['castrado'];
     $tutor = $_POST['tutor'];
-    
+    $nomeFoto = "";
+    if(file_exists($_FILES['foto']['tmp_name'])){
+        $pastaDestino = "fotos/";
+        $extensao = strtolower(substr($_FILES['foto']['name'],-4));
+        $nomeFoto = $pastaDestino . date('Ymd-His').$extensao;
+        move_uploaded_file($_FILES['foto']['tmp_name'],$nomeFoto);
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +30,8 @@
 <body>
     <h1>Alteração da Cliente</h1>
     <?php
+    
+
     echo "<h5>ID: $id</h5>";
     echo "<h5>Nome: $nome</h5>";
     echo "<h5>Idade: $idade</h5>";
@@ -30,7 +39,11 @@
     echo "<h5>Raça: $raca</h5>";
     echo "<h5>Data Nascimento: $data</h5>";
     echo "Id tutor: $tutor";
-        $sql = "UPDATE Animal SET nomeAnimal = '$nome', especie = '$especie', raca = '$raca', dataNascimento = '$data', idade = '$idade', castrado = '$castrado', idTutor = '$tutor'  WHERE idAnimal = $id";
+        $sql = "";
+        if($nomeFoto == "")
+           { $sql = "UPDATE Animal SET nomeAnimal = '$nome', especie = '$especie', raca = '$raca', dataNascimento = '$data', idade = '$idade', castrado = '$castrado', idTutor = '$tutor'  WHERE idAnimal = $id";}
+        else
+            {$sql = "UPDATE Animal SET nomeAnimal = '$nome', especie = '$especie', raca = '$raca', dataNascimento = '$data', idade = '$idade', castrado = '$castrado', foto = '$nomeFoto', idTutor = '$tutor'  WHERE idAnimal = $id";    }    
         $result = mysqli_query($con, $sql);
         if($result){
             echo "<h3>Dados Atualizados com sucesso</h3>";

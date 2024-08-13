@@ -1,0 +1,189 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg-color: #fff;
+    --footer-bg-color: #2c3e50;
+    --footer-text-color: #ecf0f1;
+    --border-radius: 8px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  header {
+    background: var(--header-bg-color);
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  header h1 {
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  form {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+  
+  legend {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+  
+  div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+  }
+  
+  button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background: var(--secondary-color);
+  }
+  
+  table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  #cidade, #Pessoa, #Animal {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  h4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+  }
+  
+  button:hover {
+    background: var(--secondary-color);
+  }
+  input[type="file"]{
+    font-size: 12px;
+    
+}

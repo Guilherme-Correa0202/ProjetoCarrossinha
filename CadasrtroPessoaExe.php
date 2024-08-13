@@ -12,12 +12,14 @@
     
     <?php
     include('Includes/conexao.php');
+       
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $endereco = $_POST['endereco'];
         $bairro = $_POST['bairro'];
         $cep = $_POST['cep'];
         $cidade = $_POST['cidade'];
+
         
         echo "<h1>Dados do Cliente:</h1>";
         echo "Nome: $nome<br>";

@@ -9,11 +9,15 @@
 
 </head>
 <body>
-    <form action="CadastroAnimalExe.php" method="post">
+    <form action="CadastroAnimalExe.php" method="post" enctype="multipart/form-data">
         <fieldset>
             <div>
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome">
+            </div>
+            <div>
+                <label for="foto">Foto</label>
+                <input type="file" name="foto" id="foto" accept="image/*">
             </div>
             <div>
                 <label for="especie">Especie:</label>

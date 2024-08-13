@@ -13,6 +13,16 @@
     
     <?php
     include('Includes/conexao.php');
+
+    $nomeFoto = "";
+    if(file_exists($_FILES['foto']['tmp_name'])){
+        $pastaDestino = "fotos/";
+        $extensao = strtolower(substr($_FILES['foto']['name'],-4));
+        $nomeFoto = $pastaDestino . date('Ymd-His').$extensao;
+        move_uploaded_file($_FILES['foto']['tmp_name'],$nomeFoto);
+    }
+
+
         $nome = $_POST['nome'];
         $especie = $_POST['especie'];
         $raca = $_POST['raca'];
@@ -27,8 +37,8 @@
         echo "Raça: $raca<br>";
         echo "Castrado:"; if($castrado == 0) {echo "Sim <br>";} else{echo "Não <br>";};
 
-        $sql = "INSERT INTO Animal (nomeAnimal, especie, raca, dataNascimento, idade, castrado, idTutor)";
-        $sql .= " VALUES('".$nome."', '".$especie."', '".$raca."', '".$data."', '".$idade."' ,'".$castrado."','".$tutor."')";
+        $sql = "INSERT INTO Animal (nomeAnimal, especie, raca, dataNascimento, idade, castrado, idTutor, foto)";
+        $sql .= " VALUES('".$nome."', '".$especie."', '".$raca."', '".$data."', '".$idade."' ,'".$castrado."','".$tutor."','".$nomeFoto."')";
         echo $sql;
         $result = mysqli_query($con, $sql);
         if($result){
