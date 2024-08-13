@@ -121,9 +121,9 @@
   }
   
   th, td {
-    padding: 15px;
+    padding: 20px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
   }
   
   th {
@@ -185,5 +185,5 @@
   }
   input[type="file"]{
     font-size: 12px;
-    
+
 }
